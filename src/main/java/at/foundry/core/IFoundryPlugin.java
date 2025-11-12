@@ -3,8 +3,8 @@ package at.foundry.core;
 import jakarta.validation.constraints.NotNull;
 
 /**
- * Base interface for implementing Plugin
- * This interface is base of the plugin load
+ * Base interface for implementing Plugin <br >
+ * This interface is base of the plugin
  */
 public interface IFoundryPlugin {
 
