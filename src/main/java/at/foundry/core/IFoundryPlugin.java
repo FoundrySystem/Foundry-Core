@@ -9,12 +9,12 @@ import jakarta.validation.constraints.NotNull;
 public interface IFoundryPlugin {
 
     /**
-     * Method gets triggert if plugins opens to screen
+     * Method gets triggered if plugins opens to screen
      */
     void start();
 
     /**
-     * Method gets triggert if plugin gets removed from screen
+     * Method gets triggered if plugin gets removed from screen
      */
     void stop();
 
