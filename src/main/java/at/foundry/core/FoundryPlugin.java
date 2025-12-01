@@ -5,7 +5,6 @@ import jakarta.validation.constraints.NotNull;
 public abstract class FoundryPlugin implements IFoundryPlugin{
 
     public void start() {
-
     }
     public void stop() {
 

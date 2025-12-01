@@ -6,7 +6,15 @@
 
     <groupId>at.foundry.core</groupId>
     <artifactId>foundry-core</artifactId>
-    <version>1.0.0</version>
+    <version>0.0.1</version>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>Foundry-Core</name>
+            <url>https://maven.pkg.github.com/FoundrySystem/Foundry-Core</url>
+        </repository>
+    </distributionManagement>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/jakarta.validation/jakarta.validation-api -->
