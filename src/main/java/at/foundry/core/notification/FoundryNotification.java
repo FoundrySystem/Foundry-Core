@@ -6,17 +6,23 @@ import javafx.scene.control.Label;
 import javafx.stage.Popup;
 import javafx.util.Duration;
 
+/**
+ * Notification for the UI
+ */
 public class FoundryNotification {
 
+    /**
+     * Sends a Toast message to the UI
+     * @param text the text to display
+     * @param notificationType see {@link at.foundry.core.notification.FoundryNotification.NotificationType }
+     * @param scene the scene you want it to be display (should be the top level)
+     */
     public static void send(String text, NotificationType notificationType, Scene scene) {
         Popup popup = new Popup();
 
         Label label = new Label(text);
-        final String color = switch (notificationType) {
-            case ERROR -> "red";
-            case INFO -> "green";
-        };
-        label.setStyle("-fx-background-color: " + color + "; -fx-text-fill: white; -fx-padding: 10px; -fx-background-radius: 5;");
+        label.setStyle("-fx-background-color: " + notificationType.backgroundColor +
+                "; -fx-text-fill: white; -fx-padding: 10px; -fx-background-radius: 5;");
         popup.getContent().add(label);
 
         var window = scene.getWindow();
@@ -35,8 +41,17 @@ public class FoundryNotification {
         ft.play();
     }
 
+    /**
+     * Notification type to display
+     */
     public enum NotificationType {
-        INFO,
-        ERROR,
+        INFO("green"),
+        ERROR("red");
+
+        private final String backgroundColor;
+
+        NotificationType(String backgroundColor) {
+            this.backgroundColor = backgroundColor;
+        }
     }
 }
