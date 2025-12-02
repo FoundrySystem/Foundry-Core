@@ -5,6 +5,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Objects;
@@ -73,6 +75,26 @@ public class FoundryFile {
                 .filter(f -> f.getAbsoluteFile().getAbsolutePath().contains(fileName))
                 .findFirst()
                 .orElse(null);
+    }
+
+
+    public static String readFile(final String pluginName, final String fileName) throws IOException {
+        pluginFolder = new File(PLUGIN_FOLDER + "/" + pluginName);
+        createNewFolder(pluginFolder);
+
+        File file = new File(pluginFolder.getAbsolutePath() + "/" + fileName);
+        FileReader fileReader = new FileReader(file);
+        return fileReader.readAllAsString();
+
+    }
+
+    public static boolean deleteFile(final String pluginName, final String fileName) {
+        pluginFolder = new File(PLUGIN_FOLDER + "/" + pluginName);
+        createNewFolder(pluginFolder);
+
+        File file = new File(pluginFolder.getAbsolutePath() + "/" + fileName);
+
+        return file.delete();
     }
 
     /**
