@@ -79,7 +79,7 @@ public class FoundryFile {
      */
     public static File createPluginFolder(final String pluginName) {
         pluginFolder = new File(PLUGIN_FOLDER + "/" + pluginName);
-        createNewFile(pluginFolder);
+        createNewFolder(pluginFolder);
         return pluginFolder;
     }
 
@@ -95,6 +95,16 @@ public class FoundryFile {
             LOG.error("Could not create new file", e);
             throw new RuntimeException(e);
         }
+    }
+
+
+    /**
+     * Creates a new File
+     * @param file target file
+     * @return true if created; otherwise false
+     */
+    private static boolean createNewFolder(File file) {
+        return file.mkdir();
     }
 
     /**
