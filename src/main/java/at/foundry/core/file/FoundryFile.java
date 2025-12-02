@@ -53,7 +53,7 @@ public class FoundryFile {
             final String fullFilename = file.name + "." + (extension.contains(".")
                     ? extension.replaceAll("\\.", "") : extension);
 
-            if (file.extension == null || file.extension.isBlank()) {
+            if (file.extension != null && !file.extension.isBlank()) {
                 createNewFile(new File(pluginFolder.getAbsolutePath() + "/" + fullFilename));
             } else {
                 createNewFolder(new File(pluginFolder.getAbsolutePath() + "/" + file.name()));
