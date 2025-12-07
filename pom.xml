@@ -6,7 +6,7 @@
 
     <groupId>at.foundry.core</groupId>
     <artifactId>foundry-core</artifactId>
-    <version>0.0.1</version>
+    <version>0.1.1</version>
 
     <distributionManagement>
         <repository>
@@ -74,7 +74,7 @@
         <dependency>
             <groupId>org.kordamp.ikonli</groupId>
             <artifactId>ikonli-javafx</artifactId>
-            <version>12.3.1</version>
+            <version>12.4.0</version>
         </dependency>
         <dependency>
             <groupId>org.kordamp.bootstrapfx</groupId>
@@ -126,6 +126,13 @@
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.5.20</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/tools.jackson.core/jackson-databind -->
+        <dependency>
+            <groupId>tools.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>3.0.3</version>
         </dependency>
     </dependencies>
 
